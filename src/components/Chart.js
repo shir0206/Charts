@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Line, Pie, Radar } from "react-chartjs-2";
+import { Bar, Line, Pie, Radar, Polar, Bubble, Scatter } from "react-chartjs-2";
 
 function Chart(props) {
   return (
@@ -70,6 +70,41 @@ function Chart(props) {
               fontColor: "#000"
             }
           }
+        }}
+      />
+      <Polar
+        data={props.chartData}
+        options={{
+          title: {
+            display: props.displayTitle,
+            text: "Polar Chart",
+            fontSize: 25
+          },
+          legend: {
+            display: true,
+            position: props.legendPosition,
+            labels: {
+              fontColor: "#000"
+            }
+          }
+        }}
+      />
+      <Scatter
+        data={props.chartData}
+        options={{
+          title: {
+            display: props.displayTitle,
+            text: "Scatter Chart",
+            fontSize: 25
+          },
+          legend: {
+            display: true,
+            position: props.legendPosition,
+            labels: {
+              fontColor: "#000"
+            }
+          },
+          showLines: false
         }}
       />
     </div>
